@@ -19,6 +19,13 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-  triangle (30,75,58,20,86,75)//ear1
-  triangle (55,145,110,35,165,145)
+ //origami fox
+ fill(235, 122, 52);
+ triangle(40, 80, 100, 180, 160, 80);//head
+ triangle(40, 80, 70, 20, 90, 80);//left ear
+ triangle(160, 80, 130, 20, 110,80);//right ear
+ 
+ triangle(112, 160, 88, 160);
+ 
+ 
 }
