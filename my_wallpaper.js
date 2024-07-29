@@ -71,6 +71,6 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   //right eye
   fill(225)
-  circle(centerX+24, centerY+12, 3); 
+  circle(centerX+24, centerY+12, 3);
 
 }
