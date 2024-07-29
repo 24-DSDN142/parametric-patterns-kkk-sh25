@@ -10,7 +10,7 @@ let ellipse_Height = 50; // Height of the ellipse
 let size = 70; // Size of the diamond
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(true); //set this to false when you're ready to print
 
@@ -65,12 +65,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
   triangle(centerX-20, centerY+20, centerX -40, centerX, centerX -20, centerY+10)
 
-  //left eye
-  fill(225)
-  circle(centerX-24, centerY+12, 3);
+  // //left eye
+  // fill(225)
+  // circle(centerX-24, centerY+12, 3);
 
-  //right eye
-  fill(225)
-  circle(centerX+24, centerY+12, 3);
+  // //right eye
+  // fill(225)
+  // circle(centerX+24, centerY+12, 3);
 
 }
