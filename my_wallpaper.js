@@ -55,11 +55,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //nose
   triangle(centerX, centerY+size, centerX+size/7, centerY+size-10, centerX-10, centerY+size-10);
 
-  //   //left eye
-  //   circle(centerX-centerX/7, centerY+20, 10);
+  ///left eye
+  //circle(centerX-centerX/7, centerY+20, 10);
   
-  //   //right eye
-  //   circle(centerX+centerX/7, centerY+20, 10);
+  // right eye
+  //circle(centerX+centerX/7, centerY+20, 10);
   
   triangle(centerX+20, centerY+20, centerX +40, centerX, centerX +20, centerY+10)//left eye
   
