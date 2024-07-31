@@ -113,28 +113,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(centerX,centerY-70,centerX/2.5,centerY/2.5);//moon part
   fill(219, 210, 204)
   ellipse(centerX+15,centerY-70,centerX/2.5,centerY/2.5);//cover
- // Draw stars in corners 
-  fill('black')
-  drawStar(10, 10, 5, 10, 5); // Top-left corner
+ 
+  //
   
 
 }
-// Function to draw a star
-function drawStar(x, y, radius1, radius2, npoints) {
-  let angle = TWO_PI / npoints;
-  let halfAngle = angle / 2.0;
-  beginShape();
-  for (let a = 0; a < TWO_PI; a += angle) {
-    let sx = x + cos(a) * radius2;
-    let sy = y + sin(a) * radius2;
-    vertex(sx, sy);
-    sx = x + cos(a + halfAngle) * radius1;
-    sy = y + sin(a + halfAngle) * radius1;
-    vertex(sx, sy);
-  }
-  endShape(CLOSE);
-}
-
-// Example usage of drawStar function
-fill('black');
-drawStar(10, 10, 5, 10, 5); // Draws a star at (10, 10) with inner radius 5, outer radius 10, and 5 points
