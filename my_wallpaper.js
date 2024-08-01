@@ -42,19 +42,6 @@ function setup_wallpaper(pWallpaper) {
 }
 function wallpaper_background() {
   background(219, 210, 204); //light honeydew green colour
-  // Draw diagonal lines
-  stroke(180); // Light gray color for diagonal lines
-  strokeWeight(1);
-  
-  // Diagonal lines from top-left to bottom-right
-  for (let i = -width; i < width + height; i += 20) {
-    line(i, 0, 0, i);
-  }
-
-  // Diagonal lines from top-right to bottom-left
-  for (let i = -width; i < width + height; i += 20) {
-    line(width - i, 0, width, i);
-  }
 }
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   
