@@ -3,42 +3,51 @@ let canvas_width = 200; // canvas width
 let canvas_height = 200; // canvas height
 let centerX = canvas_width/2;//drawing position
 let centerY = canvas_height/2;//drawing position
-let ellipse_Width = 100; // Width of the ellipse
-let ellipse_Height = 60; // Height of the ellipse
-let cat_head = 45; // Size of the cat head
 
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
 let eye_Size = 18; // size of the eyes
-let pupil_Size = 5; // size of the pupil
-let mouth_Size = 10; // mouth size
+let pupil_width = 10; // size of the pupil 
+let pupil_height = 10; // height size of the pupil
+let mouth_Size = 0; // mouth size
 
 let star = 29.5; // Star Size
-let moon_size = 40; // Moon size
+let moon_size = 50; // Moon size
 let heart_size = 50;
-let useHearts = true; // Change to false to draw moons
 
-let cloudColor = [109, 171, 209];
 
-// Symbol type (1 for stars, 2 for moons)
-let symbolType = 2; // Change this to switch between stars and moons
+//COLOURS
+let eyeColor = [255,228,196];
+let pupilColor = [66, 64, 64];
+let cloudColor = [96, 168, 219];
+let circleColor = [212, 107, 102];
+let heartColor = [244,164,96];
+let mouth_color = [168, 101, 91];
+let moon_cover = [62, 98, 171];
+let star_color = [222,184,135];
+
+//IF Statements
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 3; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.output_mode(DEVELOP_GLYPH);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
+  
 }
-
 function wallpaper_background() {
-  background(219, 210, 204); //light honeydew green colour
-   // Draw diagonal lines
+  background(62, 98, 171); //beige
 }
 
 function drawHeart(x, y, size) {
-  fill(168, 60, 50);
+  fill(heartColor);
   noStroke();
   beginShape();
   vertex(x, y);
@@ -48,7 +57,7 @@ function drawHeart(x, y, size) {
 }
 
 function drawMoon(x, y, size) {
-  fill(242, 185, 78);
+  fill(circleColor);
   noStroke();
   ellipse(x, y, size, size);
 }
@@ -67,7 +76,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   fill(179, 82, 79);
   noStroke();
   rect(centerX - 10, centerY + 11, cat_head - 26, 5); // Collar
-  fill(252, 189, 15);
+  fill(star_color);
   circle(centerX, centerY+13.5, 4);
 
   //ears
@@ -77,6 +86,16 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   fill(179, 82, 79)
   triangle(centerX+centerX/4.5,centerY-centerY/2.5,centerX+13,centerY-centerY/3.3,centerX+21,centerY-20);
   triangle(centerX-centerX/4.5 ,centerY-centerY/2.5,centerX-13,centerY-centerY/3.3,centerX-21,centerY-20);
+
+   //eyes
+  fill(eyeColor);
+  noStroke();
+  circle(centerX-10, centerY-15,eye_Size);//left eye
+  circle(centerX+10, centerY-15,eye_Size);//right eye
+  fill(pupilColor);
+  ellipse(centerX-8, centerY-15,pupil_height,pupil_width);//left pupil
+  ellipse(centerX+8, centerY-15,pupil_height,pupil_width);//right pupil
+
 
   //whiskers
   strokeWeight(1);
@@ -98,86 +117,180 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   //circle(centerX, centerY+8,9);
   triangle(centerX-2,centerY-8,centerX,centerY-4,centerX+2,centerY-8)
 
-  //eyes
-  fill(232, 220, 116);
-  noStroke();
-  circle(centerX-10, centerY-15,eye_Size);//left eye
-  circle(centerX+10, centerY-15,eye_Size);//right eye
-  fill(66, 64, 64);
-  ellipse(centerX-8, centerY-15,5,9);//left pupil
-  ellipse(centerX+8, centerY-15,5,9);//right pupil
-
   //mouth
-  fill(225);
+  fill(mouth_color);
   arc(centerX, centerY-2, mouth_Size, mouth_Size, 360, 180);
-  if (symbolType === 1) {
-    // Draw stars at the corners
-   
-  fill(252, 189, 15);
 
+  if (symbolType === 1) { // star and circles
+    // Draw stars at the corners
+  noStroke();
     // Middle Left
+  fill(star_color);
   ellipse(centerX - 73, centerY - 60, star + 15, star + 18); // Star
-  fill(219, 210, 204);
+  fill(moon_cover);
   ellipse(centerX - 89, centerY - 80, star + 4, star + 13); // Cover
   ellipse(centerX - 89, centerY - 40, star + 4, star + 13); // Cover
   ellipse(centerX - 56, centerY - 80, star + 4, star + 13); // Cover
   ellipse(centerX - 56, centerY - 40, star + 4, star + 13); // Cover
     
     // Bottom Right
-  fill(252, 189, 15);
+  fill(star_color);
   ellipse(centerX + 73, centerY + 63, star + 20, star + 25); // Star
-  fill(219, 210, 204);
+  fill(moon_cover);
   ellipse(centerX + 92, centerY + 85, star + 8, star + 16); // Cover
   ellipse(centerX + 92, centerY + 41, star + 8, star + 16); // Cover
   ellipse(centerX + 55, centerY + 84, star + 8, star + 16); // Cover
   ellipse(centerX + 55, centerY + 41, star + 8, star + 16); // Cover
   
     // Top Right
-  fill(252, 189, 15);
+  fill(star_color);
   ellipse(centerX + 50, centerY - 75, star, star); // Star
-  fill(219, 210, 204);
+  fill(moon_cover);
   ellipse(centerX + 35, centerY - 90, star, star); // Cover
   ellipse(centerX + 65, centerY - 60, star, star); // Cover
   ellipse(centerX + 35, centerY - 60, star, star); // Cover
   ellipse(centerX + 65, centerY - 90, star, star); // Cover
     
     // Mid Left
-  fill(252, 189, 15);
+  fill(star_color);
   ellipse(centerX - 70, centerY - 10, star, star); // Star
-  fill(219, 210, 204);
+  fill(moon_cover);
   ellipse(centerX - 85, centerY - 25, star, star); // Cover
   ellipse(centerX - 85, centerY + 5, star, star); // Cover
   ellipse(centerX - 55, centerY - 25, star, star); // Cover
   ellipse(centerX - 55, centerY + 5, star, star); // Cover
   
     // Bottom Left
-  fill(252, 189, 15);
+  fill(star_color);
   ellipse(centerX - 50, centerY + 50, star + 10, star + 15); // Star
-  fill(219, 210, 204);
+  fill(moon_cover);
   ellipse(centerX - 65, centerY + 35, star, star + 10); // Cover
   ellipse(centerX - 38, centerY + 35, star, star + 10); // Cover
   ellipse(centerX - 38, centerY + 70, star, star + 10); // Cover
   ellipse(centerX - 65, centerY + 70, star, star + 10); // Cover
   
     // Mid Right
-  fill(252, 189, 15);
+  fill(star_color);
   ellipse(centerX + 70, centerY - 20, star, star); // Star
-  fill(219, 210, 204);
+  fill(moon_cover);
   ellipse(centerX + 85, centerY - 35, star, star); // Cover
   ellipse(centerX + 85, centerY - 5, star, star); // Cover
   ellipse(centerX + 55, centerY - 35, star, star); // Cover
   ellipse(centerX + 55, centerY - 5, star, star); // Cover
+
+  //moon and star
+  // drawMoon(centerX - 73, centerY - 70, moon_size / 2);
+  // drawMoon(centerX - 70, centerY + 80, moon_size / 3);
+  // drawMoon(centerX + 70, centerY - 20, moon_size / 3);
+  // drawMoon(centerX - 50, centerY + 50, moon_size / 4);
+  // drawMoon(centerX + 50, centerY - 75, moon_size / 2);
+  // drawMoon(centerX + 73, centerY + 63, moon_size / 4);
+  // drawMoon(centerX - 90, centerY - 40, moon_size / 5);
+  // drawMoon(centerX + 70, centerY + 30, moon_size / 5);
+  // drawMoon(centerX - 75, centerY + 20, moon_size / 3); 
+
+
+  drawMoon(centerX - 10, centerY - 70, moon_size / 2);
+  drawMoon(centerX - 85, centerY + 80, moon_size / 3);
+  drawMoon(centerX - 50, centerY + 10, moon_size / 3);
+  drawMoon(centerX + 90, centerY - 70, moon_size / 4);
+  drawMoon(centerX + 90, centerY + 40, moon_size / 4)
+  drawMoon(centerX + 50, centerY - 35, moon_size / 4);   
+  drawMoon(centerX - 50, centerY - 50, moon_size / 5);
+  drawMoon(centerX - 60, centerY + 90, moon_size / 6);
+  drawMoon(centerX - 75, centerY + 40, moon_size / 6);
+
   }
-  else if (symbolType === 2) {
+
+  if (symbolType === 2) { // circles and heart
+    drawHeart(centerX - 10, centerY - 70, heart_size / 2);
+    drawHeart(centerX - 85, centerY + 80, heart_size / 3);
+    drawHeart(centerX - 50, centerY + 10, heart_size / 3);
+    drawHeart(centerX + 90, centerY - 70, heart_size / 4);
+    drawHeart(centerX + 90, centerY + 40, heart_size / 4);
+    drawHeart(centerX + 50, centerY - 35, heart_size / 4);
+    drawHeart(centerX - 50, centerY - 50, heart_size / 5);
+    drawHeart(centerX - 60, centerY + 90, heart_size / 6);
+    drawHeart(centerX - 75, centerY + 40, heart_size / 6);
+
     drawMoon(centerX - 73, centerY - 70, moon_size / 2);
-    drawMoon(centerX - 73, centerY + 80, moon_size / 3);
-    drawMoon(centerX - 50, centerY + 10, moon_size / 3);
-    drawMoon(centerX + 90, centerY - 70, moon_size / 4);
-    drawMoon(centerX + 90, centerY + 40, moon_size / 4);
-    drawMoon(centerX + 50, centerY - 35, moon_size / 4);
-    drawMoon(centerX - 50, centerY - 50, moon_size / 5);
-    drawMoon(centerX - 60, centerY + 90, moon_size / 6);
-    drawMoon(centerX - 75, centerY + 40, moon_size / 6);
+    drawMoon(centerX - 70, centerY + 70, moon_size / 5);
+    drawMoon(centerX + 70, centerY - 20, moon_size / 3);
+    drawMoon(centerX - 50, centerY + 50, moon_size / 4);
+    drawMoon(centerX + 50, centerY - 75, moon_size / 2);
+    drawMoon(centerX + 73, centerY + 63, moon_size / 4);
+    drawMoon(centerX - 90, centerY - 40, moon_size / 5);
+    drawMoon(centerX + 70, centerY + 30, moon_size / 5);
+    drawMoon(centerX - 75, centerY + 20, moon_size / 3);
+  }
+
+  else if (symbolType ===3) { // star and circles
+    // Draw stars at the corners
+  noStroke();
+    // Middle Left
+  fill(star_color);
+  ellipse(centerX - 73, centerY - 60, star + 15, star + 18); // Star
+  fill(moon_cover);
+  ellipse(centerX - 89, centerY - 80, star + 4, star + 13); // Cover
+  ellipse(centerX - 89, centerY - 40, star + 4, star + 13); // Cover
+  ellipse(centerX - 56, centerY - 80, star + 4, star + 13); // Cover
+  ellipse(centerX - 56, centerY - 40, star + 4, star + 13); // Cover
+    
+    // Bottom Right
+  fill(star_color);
+  ellipse(centerX + 73, centerY + 63, star + 20, star + 25); // Star
+  fill(moon_cover);
+  ellipse(centerX + 92, centerY + 85, star + 8, star + 16); // Cover
+  ellipse(centerX + 92, centerY + 41, star + 8, star + 16); // Cover
+  ellipse(centerX + 55, centerY + 84, star + 8, star + 16); // Cover
+  ellipse(centerX + 55, centerY + 41, star + 8, star + 16); // Cover
+  
+    // Top Right
+  fill(star_color);
+  ellipse(centerX + 50, centerY - 75, star, star); // Star
+  fill(moon_cover);
+  ellipse(centerX + 35, centerY - 90, star, star); // Cover
+  ellipse(centerX + 65, centerY - 60, star, star); // Cover
+  ellipse(centerX + 35, centerY - 60, star, star); // Cover
+  ellipse(centerX + 65, centerY - 90, star, star); // Cover
+    
+    // Mid Left
+  fill(star_color);
+  ellipse(centerX - 70, centerY - 10, star, star); // Star
+  fill(moon_cover);
+  ellipse(centerX - 85, centerY - 25, star, star); // Cover
+  ellipse(centerX - 85, centerY + 5, star, star); // Cover
+  ellipse(centerX - 55, centerY - 25, star, star); // Cover
+  ellipse(centerX - 55, centerY + 5, star, star); // Cover
+  
+    // Bottom Left
+  fill(star_color);
+  ellipse(centerX - 50, centerY + 50, star + 10, star + 15); // Star
+  fill(moon_cover);
+  ellipse(centerX - 65, centerY + 35, star, star + 10); // Cover
+  ellipse(centerX - 38, centerY + 35, star, star + 10); // Cover
+  ellipse(centerX - 38, centerY + 70, star, star + 10); // Cover
+  ellipse(centerX - 65, centerY + 70, star, star + 10); // Cover
+  
+    // Mid Right
+  fill(star_color);
+  ellipse(centerX + 70, centerY - 20, star, star); // Star
+  fill(moon_cover);
+  ellipse(centerX + 85, centerY - 35, star, star); // Cover
+  ellipse(centerX + 85, centerY - 5, star, star); // Cover
+  ellipse(centerX + 55, centerY - 35, star, star); // Cover
+  ellipse(centerX + 55, centerY - 5, star, star); // Cover
+
+  drawHeart(centerX - 10, centerY - 70, heart_size / 2);
+  drawHeart(centerX - 85, centerY + 80, heart_size / 3);
+  drawHeart(centerX - 50, centerY + 10, heart_size / 3);
+  drawHeart(centerX + 90, centerY - 70, heart_size / 4);
+  drawHeart(centerX + 90, centerY + 40, heart_size / 4)
+  drawHeart(centerX + 50, centerY - 35, heart_size / 4);   
+  drawHeart(centerX - 50, centerY - 50, heart_size / 5);
+  drawHeart(centerX - 60, centerY + 90, heart_size / 6);
+  drawHeart(centerX - 75, centerY + 40, heart_size / 6);
+
   }
   //tail
   noFill();
@@ -211,27 +324,27 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
   
     // Moons or Hearts
-  if (useHearts) {
-    drawHeart(centerX - 10, centerY - 70, heart_size / 2);
-    drawHeart(centerX - 85, centerY + 80, heart_size / 3);
-    drawHeart(centerX - 50, centerY + 10, heart_size / 3);
-    drawHeart(centerX + 90, centerY - 70, heart_size / 4);
-    drawHeart(centerX + 90, centerY + 40, heart_size / 4);
-    drawHeart(centerX + 50, centerY - 35, heart_size / 4);
-    drawHeart(centerX - 50, centerY - 50, heart_size / 5);
-    drawHeart(centerX - 60, centerY + 90, heart_size / 6);
-    drawHeart(centerX - 75, centerY + 40, heart_size / 6);
-  } else {
-    drawMoon(centerX - 10, centerY - 70, moon_size / 2);
-    drawMoon(centerX - 85, centerY + 80, moon_size / 3);
-    drawMoon(centerX - 50, centerY + 10, moon_size / 3);
-    drawMoon(centerX + 90, centerY - 70, moon_size / 4);
-    drawMoon(centerX + 90, centerY + 40, moon_size / 4);
-    drawMoon(centerX + 50, centerY - 35, moon_size / 4);
-    drawMoon(centerX - 50, centerY - 50, moon_size / 5);
-    drawMoon(centerX - 60, centerY + 90, moon_size / 6);
-    drawMoon(centerX - 75, centerY + 40, moon_size / 6);
-  }
+  // if (useHearts) {
+  //   drawHeart(centerX - 10, centerY - 70, heart_size / 2);
+  //   drawHeart(centerX - 85, centerY + 80, heart_size / 3);
+  //   drawHeart(centerX - 50, centerY + 10, heart_size / 3);
+  //   drawHeart(centerX + 90, centerY - 70, heart_size / 4);
+  //   drawHeart(centerX + 90, centerY + 40, heart_size / 4);
+  //   drawHeart(centerX + 50, centerY - 35, heart_size / 4);
+  //   drawHeart(centerX - 50, centerY - 50, heart_size / 5);
+  //   drawHeart(centerX - 60, centerY + 90, heart_size / 6);
+  //   drawHeart(centerX - 75, centerY + 40, heart_size / 6);
+  // } else {
+  //   drawMoon(centerX - 10, centerY - 70, moon_size / 2);
+  //   drawMoon(centerX - 85, centerY + 80, moon_size / 3);
+  //   drawMoon(centerX - 50, centerY + 10, moon_size / 3);
+  //   drawMoon(centerX + 90, centerY - 70, moon_size / 4);
+  //   drawMoon(centerX + 90, centerY + 40, moon_size / 4);
+  //   drawMoon(centerX + 50, centerY - 35, moon_size / 4);
+  //   drawMoon(centerX - 50, centerY - 50, moon_size / 5);
+  //   drawMoon(centerX - 60, centerY + 90, moon_size / 6);
+  //   drawMoon(centerX - 75, centerY + 40, moon_size / 6);
+  // }
 
  }
 
