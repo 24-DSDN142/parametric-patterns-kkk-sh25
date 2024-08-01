@@ -7,26 +7,53 @@ Your final settings.txt will look something like this when you are finished:
 
 /////////////////////////////////
 
-Wallpaper 1:
+Wallaper 1:
 
 //your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 9; // size of the pupil 
+let pupil_height = 5; // height size of the pupil
+let mouth_Size = 10; // mouth size
+
+let star = 29.5; // Star Size
+let moon_size = 40; // Moon size
+let heart_size = 50;
+
+//COLOURS
+let cloudColor = [225];
+let circleColor = [212, 144, 55];
+let heartColor = [212, 144, 55];
+let eyeColor = [232, 220, 116];
+let pupilColor = [66, 64, 64];
+let mouth_color = [225];
+let moon_cover = [219, 210, 204];
+let star_color = [230, 198, 96];
+
+//IF Statements
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 1; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(GRID_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
   pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
+}
+
+function wallpaper_background() {
+  background(219, 210, 204); //beige colour
+
 }
 
 /////////////////////////////////
@@ -34,21 +61,400 @@ function setup_wallpaper(pWallpaper) {
 Wallpaper 2:
 
 //your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 9; // size of the pupil 
+let pupil_height = 5; // height size of the pupil
+let mouth_Size = 10; // mouth size
+
+let star = 29.5; // Star Size
+let moon_size = 40; // Moon size
+let heart_size = 50;
+
+//COLOURS
+let cloudColor = [199, 80, 76];
+let circleColor = [222, 128, 53];
+let heartColor = [219, 89, 75];
+let eyeColor = [232, 220, 116];
+let pupilColor = [66, 64, 64];
+let mouth_color = [225];
+let moon_cover = [219, 210, 204];
+let star_color = [230, 198, 96];
+
+//IF Statements
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 2; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
   pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+
+function wallpaper_background() {
+  background(230, 162, 108); //beige colour
+
+}
+/////////////////////////////////
+
+Wallpaper 3:
+
+//your parameter variables go here!
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 13; // size of the pupil 
+let pupil_height = 13; // height size of the pupil
+let mouth_Size = 11; // mouth size
+
+let star = 29.5; // Star Size
+let moon_size = 40; // Moon size
+let heart_size = 80;
+
+//COLOURS
+let cloudColor = [175, 225, 175];
+let circleColor = [212, 144, 55];
+let heartColor = [219, 89, 75];
+let eyeColor = [46,139,87];
+let pupilColor = [66, 64, 64];
+let mouth_color = [211, 227, 212];
+let moon_cover = [46,139,87];
+let star_color = [230, 198, 96];
+
+//IF Statements
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 3; // Change this to switch  between stars,circles, and heart
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+function wallpaper_background() {
+  background(46,139,87);
+}
+
+/////////////////////////////////
+
+Wallpaper 4:
+//your parameter variables go here!
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 9; // size of the pupil 
+let pupil_height = 5; // height size of the pupil
+let mouth_Size = 10; // mouth size
+
+let star = 29.5; // Star Size
+let moon_size = 55; // Moon size
+let heart_size = 70;
+
+//COLOURS
+let cloudColor = [96, 168, 219];
+let circleColor = [212, 107, 102];
+let heartColor = [217, 129, 56];
+let eyeColor = [232, 220, 116];
+let pupilColor = [66, 64, 64];
+let mouth_color = [225];
+let moon_cover = [219, 210, 204];
+let star_color = [230, 198, 96];
+
+//IF Statements
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 2; // Change this to switch  between stars,circles, and heart
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+function wallpaper_background() {
+  background(219, 210, 204); //beige
+}
+
+
+
+/////////////////////////////////
+
+Wallpaper 5:
+//your parameter variables go here!
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 10; // size of the pupil 
+let pupil_height = 10; // height size of the pupil
+let mouth_Size = 0; // mouth size
+
+let star = 29.5; // Star Size
+let moon_size = 50; // Moon size
+let heart_size = 50;
+
+
+//COLOURS
+let eyeColor = [255,228,196];
+let pupilColor = [66, 64, 64];
+let cloudColor = [96, 168, 219];
+let circleColor = [212, 107, 102];
+let heartColor = [244,164,96];
+let mouth_color = [168, 101, 91];
+let moon_cover = [62, 98, 171];
+let star_color = [222,184,135];
+
+//IF Statements
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 3; // Change this to switch  between stars,circles, and heart
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+function wallpaper_background() {
+  background(62, 98, 171); //beige
+}
+
+/////////////////////////////////
+
+Wallpaper 6:
+//your parameter variables go here!
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 10; // size of the pupil 
+let pupil_height = 10; // height size of the pupil
+let mouth_Size = 0; // mouth size
+
+let star = 28.5; // Star Size
+let moon_size = 40; // Moon size
+let heart_size = 50;
+
+
+//COLOURS
+let cloudColor = [138, 154, 91];
+let circleColor = [79, 121, 66];
+let heartColor = [98, 181, 119];
+let eyeColor = [225, 193, 110];
+let pupilColor = [66, 64, 64];
+let mouth_color = [168, 101, 91];
+let moon_cover = [218, 160, 109];
+let star_color = [131, 67, 51];
+
+//IF Statements
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 1; // Change this to switch  between stars,circles, and heart
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+function wallpaper_background() {
+  background(218, 160, 109); //beige
+}
+
+/////////////////////////////////
+
+Wallpaper 7:
+//your parameter variables go here!
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 10; // size of the pupil 
+let pupil_height = 10; // height size of the pupil
+let mouth_Size = 0; // mouth size
+
+let star = 29.5; // Star Size
+let moon_size = 50; // Moon size
+let heart_size = 50;
+
+//COLOURS
+let cloudColor = [124, 168, 198];
+let circleColor = [198, 113, 106];
+let heartColor = [163, 77, 54];
+let eyeColor = [232, 220, 116];
+let pupilColor = [66, 64, 64];
+let mouth_color = [168, 101, 91];
+let moon_cover = [217, 210, 205];
+let star_color = [74, 104, 148];
+
+//IF Statements
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 2; // Change this to switch  between stars,circles, and heart
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+function wallpaper_background() {
+  background(202, 230, 248);
+}
+
+/////////////////////////////////
+
+Wallpaper 8:
+
+//your parameter variables go here!
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 12; // size of the pupil 
+let pupil_height = 12; // height size of the pupil
+let mouth_Size = 18; // mouth size
+
+//IF Statements
+let star = 28.5; // Star Size
+let moon_size = 40; // Moon size
+let heart_size = 80;
+
+//COLOURS
+let cloudColor = [94, 113, 147];
+let circleColor = [74, 104, 148];
+let heartColor = [175, 75, 110];
+let eyeColor = [217, 210, 205];
+let pupilColor = [66, 64, 64];
+let mouth_color = [168, 101, 91];
+let moon_cover = [217, 210, 205];
+let star_color = [74, 104, 148];
+
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 2; // Change this to switch  between stars,circles, and heart
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+function wallpaper_background() {
+  background(217, 210, 205); 
+
+}
+
+
+/////////////////////////////////
+
+Wallpaper 9:
+//your parameter variables go here!
+let canvas_width = 200; // canvas width
+let canvas_height = 200; // canvas height
+let centerX = canvas_width/2;//drawing position
+let centerY = canvas_height/2;//drawing position
+
+
+//CAT VARIABLES
+let cat_head = 45; // Size of the cat head
+let eye_Size = 18; // size of the eyes
+let pupil_width = 12; // size of the pupil 
+let pupil_height = 12; // height size of the pupil
+let mouth_Size = 18; // mouth size
+
+//IF Statements
+let star = 28.5; // Star Size
+let moon_size = 40; // Moon size
+let heart_size = 80;
+
+//COLOURS
+let cloudColor = [153, 88, 209];
+let circleColor = [74, 104, 148];
+let heartColor = [189, 66, 111];
+let eyeColor = [230, 198, 96];
+let pupilColor = [66, 64, 64];
+let mouth_color = [168, 101, 91];
+let moon_cover = [240, 147, 245];
+let star_color = [74, 104, 148];
+
+// Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
+let symbolType = 3; // Change this to switch  between stars,circles, and heart
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width  = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset  = 50;
+}
+function wallpaper_background() {
+  background(240, 147, 245); //pink
+  //draw_grid_lines();
 }
