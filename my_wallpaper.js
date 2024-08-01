@@ -8,30 +8,31 @@ let centerY = canvas_height/2;//drawing position
 //CAT VARIABLES
 let cat_head = 45; // Size of the cat head
 let eye_Size = 18; // size of the eyes
-let pupil_width = 9; // size of the pupil 
-let pupil_height = 5; // height size of the pupil
-let mouth_Size = 10; // mouth size
+let pupil_width = 10; // size of the pupil 
+let pupil_height = 10; // height size of the pupil
+let mouth_Size = 0; // mouth size
 
 let star = 29.5; // Star Size
-let moon_size = 55; // Moon size
-let heart_size = 70;
+let moon_size = 50; // Moon size
+let heart_size = 50;
+
 
 //COLOURS
+let eyeColor = [255,228,196];
+let pupilColor = [66, 64, 64];
 let cloudColor = [96, 168, 219];
 let circleColor = [212, 107, 102];
-let heartColor = [217, 129, 56];
-let eyeColor = [232, 220, 116];
-let pupilColor = [66, 64, 64];
-let mouth_color = [225];
-let moon_cover = [219, 210, 204];
-let star_color = [230, 198, 96];
+let heartColor = [244,164,96];
+let mouth_color = [168, 101, 91];
+let moon_cover = [62, 98, 171];
+let star_color = [222,184,135];
 
 //IF Statements
 // Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
-let symbolType = 2; // Change this to switch  between stars,circles, and heart
+let symbolType = 3; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
+  pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
   pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
@@ -41,7 +42,7 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.row_offset  = 50;
 }
 function wallpaper_background() {
-  background(219, 210, 204); //light honeydew green colour
+  background(62, 98, 171); //beige
 }
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   
