@@ -33,14 +33,14 @@ let symbolType = 3; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(A3);
+  pWallpaper.resolution(FIT_TO_SCREEN);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
   pWallpaper.grid_settings.cell_height = 200;
   pWallpaper.grid_settings.row_offset  = 50;
-  
+
 }
 function wallpaper_background() {
   background(62, 98, 171); //beige
@@ -322,29 +322,5 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(centerX+25,centerY+78,centerX-30,centerY-70);
   ellipse(centerX+25,centerY+90,centerX/3,centerY/9);
   
-  
-    // Moons or Hearts
-  // if (useHearts) {
-  //   drawHeart(centerX - 10, centerY - 70, heart_size / 2);
-  //   drawHeart(centerX - 85, centerY + 80, heart_size / 3);
-  //   drawHeart(centerX - 50, centerY + 10, heart_size / 3);
-  //   drawHeart(centerX + 90, centerY - 70, heart_size / 4);
-  //   drawHeart(centerX + 90, centerY + 40, heart_size / 4);
-  //   drawHeart(centerX + 50, centerY - 35, heart_size / 4);
-  //   drawHeart(centerX - 50, centerY - 50, heart_size / 5);
-  //   drawHeart(centerX - 60, centerY + 90, heart_size / 6);
-  //   drawHeart(centerX - 75, centerY + 40, heart_size / 6);
-  // } else {
-  //   drawMoon(centerX - 10, centerY - 70, moon_size / 2);
-  //   drawMoon(centerX - 85, centerY + 80, moon_size / 3);
-  //   drawMoon(centerX - 50, centerY + 10, moon_size / 3);
-  //   drawMoon(centerX + 90, centerY - 70, moon_size / 4);
-  //   drawMoon(centerX + 90, centerY + 40, moon_size / 4);
-  //   drawMoon(centerX + 50, centerY - 35, moon_size / 4);
-  //   drawMoon(centerX - 50, centerY - 50, moon_size / 5);
-  //   drawMoon(centerX - 60, centerY + 90, moon_size / 6);
-  //   drawMoon(centerX - 75, centerY + 40, moon_size / 6);
-  // }
-
  }
 
