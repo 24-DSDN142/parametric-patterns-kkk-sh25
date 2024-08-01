@@ -42,7 +42,7 @@ let symbolType = 1; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -94,7 +94,7 @@ let symbolType = 2; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -145,7 +145,7 @@ let symbolType = 3; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -194,7 +194,7 @@ let symbolType = 2; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -246,7 +246,7 @@ let symbolType = 3; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -296,7 +296,7 @@ let symbolType = 1; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -323,18 +323,21 @@ let cat_head = 45; // Size of the cat head
 let eye_Size = 18; // size of the eyes
 let pupil_width = 10; // size of the pupil 
 let pupil_height = 10; // height size of the pupil
-let mouth_Size = 6; // mouth size
+let mouth_Size = 0; // mouth size
 
 let star = 29.5; // Star Size
 let moon_size = 50; // Moon size
 let heart_size = 50;
 
 //COLOURS
-let cloudColor = [129, 194, 227];
-let circleColor = [194, 121, 62];
-let heartColor = [98, 181, 119];
+let cloudColor = [124, 168, 198];
+let circleColor = [198, 113, 106];
+let heartColor = [163, 77, 54];
 let eyeColor = [232, 220, 116];
 let pupilColor = [66, 64, 64];
+let mouth_color = [168, 101, 91];
+let moon_cover = [217, 210, 205];
+let star_color = [74, 104, 148];
 
 //IF Statements
 // Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
@@ -342,7 +345,7 @@ let symbolType = 2; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -351,28 +354,13 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.row_offset  = 50;
 }
 function wallpaper_background() {
-  background(219, 210, 204); //beige
-  draw_grid_lines();
-}
-
-function draw_grid_lines() {
-  stroke(180); // Set the color of the lines
-  strokeWeight(2); // Set the weight of the lines
-
-  // Draw vertical lines
-  for (let x = 0; x <= width; x += 20) {
-    line(x, 0, x, height);
-  }
-
-  // Draw horizontal lines
-  for (let y = 0; y <= height; y += 20) {
-    line(0, y, width, y);
-  }
+  background(202, 230, 248);
 }
 
 /////////////////////////////////
 
 Wallpaper 8:
+
 //your parameter variables go here!
 let canvas_width = 200; // canvas width
 let canvas_height = 200; // canvas height
@@ -388,26 +376,26 @@ let pupil_height = 12; // height size of the pupil
 let mouth_Size = 18; // mouth size
 
 //IF Statements
-let star = 29.5; // Star Size
-let moon_size = 30; // Moon size
-let heart_size = 70;
+let star = 28.5; // Star Size
+let moon_size = 40; // Moon size
+let heart_size = 80;
 
 //COLOURS
-let cloudColor = [89, 114, 150];
+let cloudColor = [94, 113, 147];
 let circleColor = [74, 104, 148];
-let heartColor = [189, 66, 111];
-let eyeColor = [225];
+let heartColor = [175, 75, 110];
+let eyeColor = [217, 210, 205];
 let pupilColor = [66, 64, 64];
 let mouth_color = [168, 101, 91];
-let moon_cover = [218, 160, 109];
-let star_color = [131, 67, 51];
+let moon_cover = [217, 210, 205];
+let star_color = [74, 104, 148];
 
 // Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
 let symbolType = 2; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -416,8 +404,10 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.row_offset  = 50;
 }
 function wallpaper_background() {
-  background(219, 210, 204); //beige
+  background(217, 210, 205); 
+
 }
+
 
 /////////////////////////////////
 
@@ -456,7 +446,7 @@ let symbolType = 3; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings

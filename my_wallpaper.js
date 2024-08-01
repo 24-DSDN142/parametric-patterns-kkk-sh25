@@ -16,24 +16,23 @@ let star = 29.5; // Star Size
 let moon_size = 50; // Moon size
 let heart_size = 50;
 
-
 //COLOURS
-let eyeColor = [255,228,196];
+let cloudColor = [124, 168, 198];
+let circleColor = [198, 113, 106];
+let heartColor = [163, 77, 54];
+let eyeColor = [232, 220, 116];
 let pupilColor = [66, 64, 64];
-let cloudColor = [96, 168, 219];
-let circleColor = [212, 107, 102];
-let heartColor = [244,164,96];
 let mouth_color = [168, 101, 91];
-let moon_cover = [62, 98, 171];
-let star_color = [222,184,135];
+let moon_cover = [217, 210, 205];
+let star_color = [74, 104, 148];
 
 //IF Statements
 // Symbol type (1 for stars and circle, 2 for heart and circles, 3 for heart and stars)
-let symbolType = 3; // Change this to switch  between stars,circles, and heart
+let symbolType = 2; // Change this to switch  between stars,circles, and heart
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GLIDE_WALLPAPER);//GRID_WALLPAPER DEVELOP_GLYPH
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -42,8 +41,9 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.grid_settings.row_offset  = 50;
 }
 function wallpaper_background() {
-  background(62, 98, 171); //beige
+  background(202, 230, 248);
 }
+
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
   
   // Draw heart
@@ -306,5 +306,5 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   ellipse(centerX + 25,centerY + 78,centerX - 30, centerY - 70);
   ellipse(centerX + 25,centerY + 90,centerX / 3, centerY / 9);
   
- }
+}
 
