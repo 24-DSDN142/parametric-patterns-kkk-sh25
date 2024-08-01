@@ -204,23 +204,8 @@ function setup_wallpaper(pWallpaper) {
 }
 function wallpaper_background() {
   background(219, 210, 204); //beige
-  draw_grid_lines();
 }
 
-function draw_grid_lines() {
-  stroke(180); // Set the color of the lines
-  strokeWeight(2); // Set the weight of the lines
-
-  // Draw vertical lines
-  for (let x = 0; x <= width; x += 20) {
-    line(x, 0, x, height);
-  }
-
-  // Draw horizontal lines
-  for (let y = 0; y <= height; y += 20) {
-    line(0, y, width, y);
-  }
-}
 
 
 /////////////////////////////////
@@ -432,22 +417,6 @@ function setup_wallpaper(pWallpaper) {
 }
 function wallpaper_background() {
   background(219, 210, 204); //beige
-  draw_grid_lines();
-}
-
-function draw_grid_lines() {
-  stroke(180); // Set the color of the lines
-  strokeWeight(2); // Set the weight of the lines
-
-  // Draw vertical lines
-  for (let x = 0; x <= width; x += 20) {
-    line(x, 0, x, height);
-  }
-
-  // Draw horizontal lines
-  for (let y = 0; y <= height; y += 20) {
-    line(0, y, width, y);
-  }
 }
 
 /////////////////////////////////
